@@ -1,11 +1,11 @@
 === TwoSides ===
 Contributors:  tradesouthwest
 Donate link: https://paypal.me/tradesouthwest
-Tags: directory, classifieds, listings, ecommerce, business directory, listing, classified ads, responsive, forms, metabox, real estate, catalog
+Tags: directory, comments, form, catalog
 Requires at least: 3.8
 Tested up to: 4.9.1
 Requires PHP: 5.2
-Stable tag: 2.0.2
+Stable tag: 1.0.1
 License: Apache License
 License URI: See File, LICENSE
 Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
