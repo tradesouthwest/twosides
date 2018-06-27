@@ -1,0 +1,75 @@
+.twosides_fieldset .twosides-left {
+    float:left; 
+    display:inline-block;
+}
+.twosides_fieldset .twosides-right  {
+    float:right; 
+    display:block;
+}
+ 
+#commentform p.ts-hidden {
+    display: none;
+}
+.comments-above-list{
+    display: block;
+    width: 100%;
+    padding: 1%;
+}
+
+.comments-area.twosides #respond.comment-respond {
+    color: inherit;    
+}
+.comments-area.twosides #respond.comment-respond.twoside-positive,
+.comments-area.twosides #respond.comment-respond.twoside-negative{
+    color: inherit;
+}
+.comment-body {
+    border-bottom: none;
+    line-height: 1.4;
+    padding: 12px; 
+}
+#comments.comments-area {
+    width: 100%;
+    margin: 0 auto 90px auto;
+    
+    max-width: 910px;  
+}
+.comment-list.comments-positive{
+    width: 50%;
+    margin: 0;
+    float: left;
+    height: 100%;
+}
+.comment-list.comments-negative {
+    width: 50%;
+    margin: 0;
+    float: right;
+    display:block;
+}
+.comment-list li.twosides_positive,
+.comment-list li.twosides_negative {
+    overflow: hidden;
+    min-height: 150px;
+    height: auto;
+    max-height: 150px;
+    width: 100%;
+    padding: 0;
+}
+li.twosides_positive {
+    color: inherit;
+}
+li.twosides_negative {
+    color: inherit;
+}
+.comment-content {
+
+    overflow: hidden;
+} 
+#respond.comment-respond:before{
+	content: " ";
+	clear:both;
+	width: 100%;
+	height: 1px;
+	display: block;
+	border-top: 1px solid #ddd;
+}
