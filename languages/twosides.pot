@@ -1,0 +1,24 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TwoSides\n"
+"POT-Creation-Date: 2018-06-27 09:45-0700\n"
+"PO-Revision-Date: 2018-06-27 09:46-0700\n"
+"Last-Translator: \n"
+"Language-Team: Tradesouthwest <support@tradesouthwest.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;esc_html__;esc_html_e;"
+"esc_attr__;esc_attr_e;_x\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: template/comments-Sydney.php:36 template/comments-Sydney.php:54
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: template/comments-Sydney.php:37 template/comments-Sydney.php:55
+msgid "Newer Comments &rarr;"
+msgstr ""
