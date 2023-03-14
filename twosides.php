@@ -3,72 +3,107 @@
 Plugin Name: TwoSides
 Plugin URI: http://
 Description: COMMENTS SIDE BY SIDE
-Version: 1.0.1
+Version: 1.0.4
 Author: Larry Judd
 Author URI: 
-License: GPL2
+License: Apache 2
 */ 
 defined( 'ABSPATH' ) or die( 'X' );
 
-if (!defined('TWOSIDES_URL')) { define( 'TWOSIDES_URL', plugin_dir_url(__FILE__)); }
-
-define('TWOSIDES_BASE_PATH', dirname(plugin_basename(__FILE__)));
+if( !defined('TWOSIDES_URL' ) ) { 
+     define( 'TWOSIDES_URL', plugin_dir_url(__FILE__) ); }
+if( !defined('TWOSIDES_BASE_PATH' ) ) { 
+     define( 'TWOSIDES_BASE_PATH', dirname(plugin_basename(__FILE__) ) ); }
+if( !defined('TWOSIDES_VER' ) ) { 
+     define( 'TWOSIDES_VER', '1.0.4' ); }
 
 /**
- * Check technical requirements before activating the plugin (Wordpress 3.0 or newer required)
+ * Get time of activating the plugin
  */
 function twosides_plugin_activate()
 {
-  
-
+    $format    = get_option('date_format');
+    $timestamp = get_the_time();
+    $time      = date_i18n($format, $timestamp, true);
+    add_option( 'twosides_date_plugin_activated' );
+    update_option( 'twosides_date_plugin_activated', $time );
 }
+
 /**
  * deactivation settings
  */
 function twosides_plugin_deactivate() 
-{
-    //delete_option( 'twosides_date_plugin_activated' );
+{    
+    delete_option( 'twosides_date_plugin_activated' );
         return false;
-} 
+}
 
-register_activation_hook(__FILE__, 'twosides_plugin_activate');
+register_activation_hook(__FILE__,   'twosides_plugin_activate');
 register_deactivation_hook(__FILE__, 'twosides_plugin_deactivate');
-
-/**
- * Add setup link.
- */
-
-//enqueue or localise scripts
-function twosides_public_style() 
-{
-    wp_enqueue_style( 'twosides-css',  TWOSIDES_URL
-                      . 'library/twosides-css.css',array(), null, false );
-   wp_enqueue_script( 'twosides-plugin', plugin_dir_url( __FILE__ ) . 
-                       'library/twosides-plugin.js', 
-                       array( 'jquery' ), '1.6.0', true );  
-    
-}
-    add_action( 'wp_enqueue_scripts', 'twosides_public_style' );
-    
-add_theme_support( 'html5', array( 'comment-form', 'comment-list' ) );
-
-/**
- * Include required files.
- */
-require_once dirname(__FILE__) . '/includes/twosides-functions.php';
-require_once dirname(__FILE__) . '/includes/twosides-shortcodes.php';
-//register shortcodes
-function twosides_register_shortcodes() {
-    
-    add_shortcode( 'twosides_form_header', 'twosides_header_form_shortcode' ); 
-}
-    add_action( 'init', 'twosides_register_shortcodes' );
-
+register_uninstall_hook(__FILE__,    'twosides_plugin_uninstall');
 
 /**
  * Add language file.
  */
-if (function_exists('load_plugin_textdomain'))
+if( function_exists( 'load_plugin_textdomain' ) )
 {
-    load_plugin_textdomain('twosides', false, TWOSIDES_BASE_PATH . '/languages/');
+    load_plugin_textdomain( 'twosides', false, TWOSIDES_BASE_PATH . '/languages/');
 }
+
+/**
+ * Add setup link.
+ */
+//enqueue or localise scripts 
+add_action( 'wp_enqueue_scripts', 'twosides_public_style' );
+function twosides_public_style() 
+{
+    wp_enqueue_style( 'twosides-css',  TWOSIDES_URL
+                     . 'library/twosides-css.css', array(), TWOSIDES_VER, false );
+    wp_enqueue_script( 'twosides-plugin', plugin_dir_url( __FILE__ ) . 
+                       'library/twosides-plugin.js', 
+                       array( 'jquery' ), '', true ); 
+}
+
+// check for comments theme support
+if( !current_theme_supports( 'comments' ) ) 
+{ 
+    //add_post_type_support( 'post', array( 'comments' ) );
+    add_theme_support( 'html5', array( 'comment-form', 'comment-list' ) );
+}   
+   
+
+/**
+ * Include required files.
+ */
+if( is_admin() ) : 
+function twosides_enqueue_admin_scripts()
+{
+    wp_enqueue_style( 'twosides-admin-css',  TWOSIDES_URL
+                      . 'library/twosides-admin-css.css', array(), null, false );
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'twosides-colors', 
+                       plugins_url('library/twosides-colors.js', __FILE__ ), 
+                       array( 'wp-color-picker' ), false, true );
+    if ( ! did_action( 'wp_enqueue_media' ) ) {
+		wp_enqueue_media();
+	}
+}
+    add_action( 'admin_enqueue_scripts', 'twosides_enqueue_admin_scripts' );
+endif;
+
+//require_once( plugin_dir_path( __FILE__ ) . 'class-page-template-twosides.php' );
+//add_action( 'plugins_loaded', array( 'Page_Template_Twosides', 'get_instance' ) );
+    require_once dirname(__FILE__) . '/includes/twosides-admin-settings.php';
+    require_once dirname(__FILE__) . '/includes/twosides-admin-forms.php';
+    require_once dirname(__FILE__) . '/includes/twosides-helpers.php';
+    require_once dirname(__FILE__) . '/includes/twosides-functions.php';
+    require_once dirname(__FILE__) . '/templates/twosides-comments_templater.php';
+    require_once dirname(__FILE__) . '/includes/twosides-shortcodes.php';
+
+//register shortcodes
+add_action( 'init', 'twosides_register_shortcodes' ); 
+function twosides_register_shortcodes() 
+{
+    add_shortcode( 'twosides_form_header', 'twosides_header_form_shortcode' ); 
+} 
+?>

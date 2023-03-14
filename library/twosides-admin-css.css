@@ -1,0 +1,74 @@
+table.form-table label.olmin {
+    display: inline-block;
+    width: 155px;
+    padding-left: 2px;
+    }
+    table.form-table label.olmin small { 
+    margin-left: .222em;
+    }
+    table.form-table {
+    border-collapse: initial;
+    }
+    .olback{
+    background: #d1f5f7;
+    padding-top: .175em;
+    height: 17px;
+    display: table-cell;
+    }
+    .olback-red{
+    background: #ffc0bb;
+    padding-top: .175em;
+    height: 17px;
+    display: table-cell;
+    }
+    dd.olds span {
+    margin-left: 2em;
+    width: 40%;
+    }
+    dd.olds {
+    border-bottom: thin dotted #ccc;
+    }
+    .wrap-twosides-admin .smallinput{
+        width: 90px;
+    }
+    .wrap-twosides-admin{
+        background: #e8eaee;
+        padding-left: 15px;
+    }
+    .wrap-twosides-admin .form-table th {
+        padding: 5px;
+        color: inherit;
+        font-weight: lighter;
+        border-bottom: 1px solid #ddd;
+        background: #f8faff;
+        vertical-align: middle;
+    }
+    .wrap-twosides-admin .form-table td {
+        padding: 7px 10px;
+        border-bottom: 1px dotted #ddd;
+        }
+    .wrap-twosides-admin .form-table tr:nth-of-type(odd) td {
+        border-bottom: none;
+    }
+    li#toplevel_page_twosides .wp-menu-image.dashicons-before.dashicons-admin-comments:before{
+        box-shadow: inset -1px -1px 1px 2px #c8c11a;
+        padding:3px;
+        border-radius: 14px;
+    }
+xmp, code.premasked {
+    background: #ffffff;
+    padding:15px;
+    border: thin solid #ddd;
+    display: block;
+    max-width: 705px;
+}
+ul.inside-disc{list-style: inside square;}
+.twosides-support b{color: green;}
+.twosides-highlite{background: #ffd;}
+.twosides-support p,
+.twosides-support ol li{line-height: 1.7222;}
+.twosides-support h5{color: maroon;padding-left:30px;}
+.twosides-support ol li,
+.twosides-support ul li{ margin-top: 1em;}
+.twosides-support ol {margin-top:1em; border-top: 3px dashed #444;}
+.twosides-support ol li{color: rgb(20,20,20);}

@@ -56,24 +56,19 @@ animation: slidein 1s;
     animation-play-state: normal;
     animation-direction: normal;
     animation-fill-mode: forwards;
-}
+    }
 
-@keyframes textOut {
+    @keyframes textOut {
     0% {
-        opacity: 0;
-        margin-left: -620px;
+      opacity: 0;
+      margin-left: -620px;
     }
     100% {
-        opacity: 1;
-        margin-left: 0px;
+      opacity: 1;
+      margin-left: 0px;
     }
-}  
-.comment-list p{
-    color: #000;
-}
-.comment-list .comment-meta{
-    background: rgba(252,252,252,.64);
-} 
+    }  
+ 
 .comments-area.twosides #respond.comment-respond.twoside-positive,
 .comments-area.twosides #respond.comment-respond.twoside-negative{
     color: inherit;
