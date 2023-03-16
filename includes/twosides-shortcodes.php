@@ -113,12 +113,12 @@ endif;
  * @return $content
  */
 
-function twosides_shortcode_autoto_post( $content ) {
-
+function twosides_shortcode_autoto_post( $content ) 
+{
     global $post;
+    
     if( ! $post instanceof WP_Post ) return $content;
-
-    //$comment_forms = apply_filters( 'comments_template', 'twosides_comment_templater' );
+    
     switch( $post->post_type ) {
       case 'post':
         return $content . '[twosides_form_header]'; 
@@ -130,10 +130,3 @@ function twosides_shortcode_autoto_post( $content ) {
         return $content;
     }
 } 
-
-/**
- * get comments content meta data 
- * @TODO
- * @returns $content
- */
-  

@@ -68,12 +68,7 @@ animation: slidein 1s;
         margin-left: 0px;
     }
 }  
-.comment-list p{
-    color: #000;
-}
-.comment-list .comment-meta{
-    background: rgba(252,252,252,.64);
-} 
+ 
 .comments-area.twosides #respond.comment-respond.twoside-positive,
 .comments-area.twosides #respond.comment-respond.twoside-negative{
     color: inherit;
@@ -92,39 +87,37 @@ animation: slidein 1s;
     padding: 30px 0px;
     max-width: 910px;
     display: table;
+    background: #ddd; /* 4 testing */
 }
+.comment-list p{
+    color: #000;
+}
+.comment-list .comment-meta{
+    background: rgba(252,252,252,.64);
+}
+/* list wrap (ul or ol or div) */
 .comment-list.comments-positive{
     width: 50%;
-    margin: 0;
     float: left;
     height: 100%;
-    padding-left: 0;
-    border-right-color:transparent;
-    border-right-style: solid;
-    list-style: none;
 }
+
 .comment-list.comments-negative {
     width: 50%;
-    margin: 0;
     float: right;
     display:block;
-    padding-left: 0;
-    border-left-color:transparent;
-    border-left-style: solid;
-    list-style: none;
+    height: 100%;
 }
-.comment-list li.twosides_positive,
-.comment-list li.twosides_negative {
-    height: auto;
+
+
+.comment-list li {
     line-height: 1.2;
-    width: 100%;
- 
 }
-.twosides_positive {
-    color: inherit;
+.comment-list.comments-positive .comment{
+    margin-right: 1%
 }
-.twosides_negative {
-    color: inherit;
+.comment-list.comments-negative .comment{
+    margin-right: 0;
 }
 .comment-content {
 
@@ -154,6 +147,8 @@ left: auto;
 }
 .twsshow {
     display:block;
+    color: #888;
+    font-size: xx-small;
 }
 .twosides_fieldset input[type="submit"]#actionPositive,
 .twosides_fieldset input[type="submit"]#actionNegative {

@@ -1,12 +1,14 @@
 <?php
 /*
 Plugin Name: TwoSides
-Plugin URI: http://
-Description: COMMENTS SIDE BY SIDE
-Version: 1.0.4
-Author: Larry Judd
-Author URI: 
-License: Apache 2
+Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
+Description: Display comments in a side by side fashion and divide each side as positive or negative styled.
+Version:           1.0.0
+Author:            Larry Judd
+Author URI:        https://tradesouthwest.com
+Stable tag:        1.0.0
+License:           GPLv3
+License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */ 
 defined( 'ABSPATH' ) or die( 'X' );
 
@@ -15,7 +17,7 @@ if( !defined('TWOSIDES_URL' ) ) {
 if( !defined('TWOSIDES_BASE_PATH' ) ) { 
      define( 'TWOSIDES_BASE_PATH', dirname(plugin_basename(__FILE__) ) ); }
 if( !defined('TWOSIDES_VER' ) ) { 
-     define( 'TWOSIDES_VER', '1.0.4' ); }
+     define( 'TWOSIDES_VER', '1.0.0' ); }
 
 /**
  * Get time of activating the plugin
@@ -73,7 +75,7 @@ if( !current_theme_supports( 'comments' ) )
    
 
 /**
- * Include required files.
+ * Include required scripts.
  */
 if( is_admin() ) : 
 function twosides_enqueue_admin_scripts()
@@ -91,14 +93,13 @@ function twosides_enqueue_admin_scripts()
     add_action( 'admin_enqueue_scripts', 'twosides_enqueue_admin_scripts' );
 endif;
 
-//require_once( plugin_dir_path( __FILE__ ) . 'class-page-template-twosides.php' );
-//add_action( 'plugins_loaded', array( 'Page_Template_Twosides', 'get_instance' ) );
-    require_once dirname(__FILE__) . '/includes/twosides-admin-settings.php';
-    require_once dirname(__FILE__) . '/includes/twosides-admin-forms.php';
-    require_once dirname(__FILE__) . '/includes/twosides-helpers.php';
-    require_once dirname(__FILE__) . '/includes/twosides-functions.php';
-    require_once dirname(__FILE__) . '/templates/twosides-comments_templater.php';
-    require_once dirname(__FILE__) . '/includes/twosides-shortcodes.php';
+// load required files
+require_once dirname(__FILE__) . '/includes/twosides-admin-settings.php';
+require_once dirname(__FILE__) . '/includes/twosides-admin-forms.php';
+require_once dirname(__FILE__) . '/includes/twosides-helpers.php';
+require_once dirname(__FILE__) . '/includes/twosides-functions.php';
+require_once dirname(__FILE__) . '/templates/twosides-comments_templater.php';
+require_once dirname(__FILE__) . '/includes/twosides-shortcodes.php';
 
 //register shortcodes
 add_action( 'init', 'twosides_register_shortcodes' ); 

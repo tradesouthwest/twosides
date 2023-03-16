@@ -108,62 +108,6 @@ function twosides_register_admin_options()
         'twosides_admin',
         'twosides_admin_section'
     );
-    add_settings_field(
-        'twosides_negposh',
-        __( 'Padding in comments boxes', 'twosides' ),
-        'twosides_negposh_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_margbord',
-        __('Spacing for Comments Boxes', 'twosides'),
-        'twosides_margbord_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_checkbox_metadata',
-        __('Show/Hide Comments Meta', 'onlist'),
-        'twosides_checkbox_metadata_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_checkbox_twscounter',
-        __('Show/Hide Two Sides Counter', 'onlist'),
-        'twosides_checkbox_twscounter_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_checkbox_commlists',
-        __('Use Theme Comments List Template - optional fallback', 'onlist'),
-        'twosides_checkbox_commlists_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_debug',
-        __('Debug Mode', 'twosides'),
-        'twosides_debug_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_field_url',
-        __('Remove Webiste field', 'twosides'),
-        'twosides_field_url_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
-    add_settings_field(
-        'twosides_addcss',
-        __('Additional CSS', 'twosides'),
-        'twosides_addcss_cb',
-        'twosides_admin',
-        'twosides_admin_section'
-    );
     
     
 /**
@@ -186,7 +130,6 @@ function twosides_register_admin_options()
    
 }
 
-
 // admin section content cb
 function twosides_admin_section_cb()
 { 
@@ -197,11 +140,13 @@ esc_html_e( ' Set colors and options', 'twosides' ); print( '</h3>' );
 // instructions docs section content cb
 function twosides_docs_section_cb()
 { 
+$imgurl = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
 print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
 esc_html_e( ' Instructions and Tips', 'twosides' ); print( '</h3>' );
 $twosides_date = get_option( 'twosides_date_plugin_activated' ); 
-echo '<p>' . esc_html__( 'This plugin last activated on: ', 
-'onlist' ) . '<code>'. esc_html($twosides_date) .'</code></p>';
+echo '<p><img src="' . esc_url($imgurl) . '" alt="logo" height="50"/>' 
+. esc_html__( 'This plugin last activated on: ', 'twosides' ) 
+. '<code>'. esc_html($twosides_date) .'</code> Version '. TWOSIDES_VER . '</p>';
 }
         
 //render admin page

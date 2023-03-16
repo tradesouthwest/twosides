@@ -21,18 +21,12 @@ if ( !comments_open() ) {
    * */ 
 if( post_password_required() ) { return; } 
 
-$dbug = twosides_debug_class();
-
 ?> 
   
 <div id="comments" class="comments-area"> 
 
     <?php if( have_comments() ) : ?> 
-    
-        <h6 class="<?php echo esc_attr( $dbug ); ?>">
-        <?php esc_html_e( 'Viewing comments template from TwoSides plugin template folder ', 
-        'twosides' ); echo absint(time()); ?></h6>
-
+    <h4>comments count start</h4>
        <ul class="comment-list comments-positive">  
 		<?php 
         $commentp = get_comments( array(
