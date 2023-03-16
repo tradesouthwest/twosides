@@ -3,10 +3,10 @@
 = Load order
 
 /includes/twosides-admin-settings.php
-    add_action( 'admin_menu', 'twosides_add_options_page' );  
-    add_action( 'admin_init', 'twosides_register_admin_options' );
-    register_setting( 'twosides_admin', 'twosides_admin' ); //options pg
-    register_setting( 'twosides_docs', 'twosides_docs' ); //listings pg
+    - add_action( 'admin_menu', 'twosides_add_options_page' );  
+    - add_action( 'admin_init', 'twosides_register_admin_options' );
+    - register_setting( 'twosides_admin', 'twosides_admin' ); //options pg
+    - register_setting( 'twosides_docs', 'twosides_docs' ); //listings pg
 
 /includes/twosides-admin-forms.php
     settings and docs sections
