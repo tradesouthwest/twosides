@@ -1,6 +1,6 @@
-** TwoSides **
+== TwoSides ==
 
-* Load order *
+=Load order=
 
 /includes/twosides-admin-settings.php
 - add_action( 'admin_menu', 'twosides_add_options_page' );  
