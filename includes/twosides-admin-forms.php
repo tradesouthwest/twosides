@@ -205,10 +205,13 @@ If you are using a special template file for single posts, you may want to use t
 
 <dt><?php esc_html_e( 'With an upgrade of Twosides you can add the following features:', 'twosides' ); ?></dt>
 <dd></dd>
-<dd><?php esc_html_e( 'Control what template to use for comments form', 'twosides' ); ?></dd>
-<dd><?php esc_html_e( 'Add styles as preset values to buttons, comment list boxes and more', 'twosides' ); ?></dd>
-<dd><?php esc_html_e( 'Turn on or off counters and other assets on page', 'twosides' ); ?></dd>
-<dd><?php esc_html_e( 'Backend functionality for optimizations....', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Control what template to use for comments form', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Add styles directly inline for comment list boxes and more', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Turn on or off counters and other assets on page', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Backend functionality and debug mode for optimizations.', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Documentation for making alterations to comment form code.', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Support from author team for advanced usages (90 days).', 'twosides' ); ?></dd>
+
 <dd></dd>
 </dl>
 </div>
