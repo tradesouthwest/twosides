@@ -38,3 +38,11 @@
 ## Notes
 https://twosides.tswdev.com/ demo. https://tswdev.com/test/ dev site.
 icon colors #52ae6a #de6565
+
+### Unsupported Themes 
+Lightning
+Twenty Twenty-Three
+
+### Resource Articles 
+- https://www.smashingmagazine.com/2012/05/adding-custom-fields-in-wordpress-comment-form/
+- https://stackoverflow.com/questions/8234673/wordpress-how-to-adding-a-custom-comment-type 
