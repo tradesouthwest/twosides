@@ -200,7 +200,7 @@ If you are using a special template file for single posts, you may want to use t
 <dd></dd>
 <dt><b><?php esc_html_e( 'For more options, try TwoSides Debate plugin by Tradesouthwest.', 'twosides' ); ?></b></dt> 
 <dd></dd>
-<dd><a class="button primary" href="https://twosides.tradesouthwest.com/index.html" title="upgrade for twosides" target="_blank"><?php esc_html_e( 'TwoSides Debate', 'twosides' ); ?></a></dd>
+<dd><a class="button primary" href="https://themes.tradesouthwest.com/wordpress/plugins/" title="upgrade for twosides" target="_blank"><?php esc_html_e( 'TwoSides Debate', 'twosides' ); ?></a></dd>
 <dd></dd>
 
 <dt><?php esc_html_e( 'With an upgrade of Twosides you can add the following features:', 'twosides' ); ?></dt>
