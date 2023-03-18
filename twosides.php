@@ -3,10 +3,10 @@
 Plugin Name: TwoSides
 Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
 Description: Display comments in a side by side fashion and divide each side as positive or negative styled.
-Version:           1.0.0
+Version:           1.0.1
 Author:            Larry Judd
 Author URI:        https://tradesouthwest.com
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           GPLv3
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */ 
@@ -17,7 +17,7 @@ if( !defined('TWOSIDES_URL' ) ) {
 if( !defined('TWOSIDES_BASE_PATH' ) ) { 
      define( 'TWOSIDES_BASE_PATH', dirname(plugin_basename(__FILE__) ) ); }
 if( !defined('TWOSIDES_VER' ) ) { 
-     define( 'TWOSIDES_VER', '1.0.0' ); }
+     define( 'TWOSIDES_VER', '1.0.1' ); }
 
 /**
  * Get time of activating the plugin
@@ -48,8 +48,9 @@ register_uninstall_hook(__FILE__,    'twosides_plugin_uninstall');
  * Add language file.
  */
 if( function_exists( 'load_plugin_textdomain' ) )
-{
-    load_plugin_textdomain( 'twosides', false, TWOSIDES_BASE_PATH . '/languages/');
+{   
+    $plugin_dir = basename(dirname(__FILE__)).'/languages';
+    load_plugin_textdomain( 'twosides', false, $plugin_dir );
 }
 
 /**
@@ -73,7 +74,6 @@ if( !current_theme_supports( 'comments' ) )
     add_theme_support( 'html5', array( 'comment-form', 'comment-list' ) );
 }   
    
-
 /**
  * Include required scripts.
  */

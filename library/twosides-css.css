@@ -79,7 +79,7 @@ animation: slidein 1s;
     padding: 10px; 
 }
 .comments-area .comment-content {
-    padding: 0px 0px 0px 5px!important;
+    padding: 0px 0px 0px 5px;
 }
 #comments.comments-area.twosides {
     width: 100%;

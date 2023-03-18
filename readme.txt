@@ -5,7 +5,7 @@ Tags:  reviews, comments, opinions, pro con, split comments, responsive, forms, 
 Requires at least: 3.8
 Tested up to: 6.1.1
 Requires PHP: 5.2
-Stable tag:   1.0.0
+Stable tag:   1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
@@ -43,6 +43,10 @@ A.: Your theme may not support this plugin. Try another theme or use the instruc
 == Changelog ==
 = 1.0.1 =
 * corrected url in admin
+* made some style adjustments
+* removed unused files
+* cleaned code in includes folder
+* made default backgrounds transparent
 
 = 1.0.0 =
 * initial release

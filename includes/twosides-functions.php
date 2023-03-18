@@ -114,22 +114,22 @@ function twosides_background_colors_cb()
 {   
     $options = get_option('twosides_admin'); 
 
-    $def1 = "#aafaca";
+    $def1 = "transparent"; // "#aafaca";
     $twosides_color_1 = $options['twosides_posibkgd'];
     if( $twosides_color_1 == '' ) $twosides_color_1   = esc_attr($def1);
 
-    $def2 = "#faaa99";
+    $def2 = "transparent"; // "#faaa99";
     $twosides_color_2 = $options['twosides_negabkgd'];
     if( $twosides_color_2 == '' ) $twosides_color_2   = esc_attr($def2);  
     
-    $def6 = '#ffffff';  
-    $twosides_negabord = $options['twosides_negabord'];
-    if( $twosides_negabord == '' ) $twosides_negabord = esc_attr($def6);  
-    
-    $def7 = '#ffffff';  
+    $def7 = '#aafaca';  
     $twosides_posibord = $options['twosides_posibord'];
     if( $twosides_posibord == '' ) $twosides_posibord = esc_attr($def7); 
 
+    $def6 = '#faaa99';  
+    $twosides_negabord = $options['twosides_negabord'];
+    if( $twosides_negabord == '' ) $twosides_negabord = esc_attr($def6);  
+    
     $htm = ''; 
     $htm .= 
     '.prohead-count,.comment-list.comments-positive .comment,#actionPositive{

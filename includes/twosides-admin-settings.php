@@ -133,20 +133,20 @@ function twosides_register_admin_options()
 // admin section content cb
 function twosides_admin_section_cb()
 { 
-print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
-esc_html_e( ' Set colors and options', 'twosides' ); print( '</h3>' );  
+    print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
+    esc_html_e( ' Set colors and options', 'twosides' ); print( '</h3>' );  
 }
  
 // instructions docs section content cb
 function twosides_docs_section_cb()
 { 
-$imgurl = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
-print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
-esc_html_e( ' Instructions and Tips', 'twosides' ); print( '</h3>' );
-$twosides_date = get_option( 'twosides_date_plugin_activated' ); 
-echo '<p><img src="' . esc_url($imgurl) . '" alt="logo" height="50"/>' 
-. esc_html__( 'This plugin last activated on: ', 'twosides' ) 
-. '<code>'. esc_html($twosides_date) .'</code> Version '. TWOSIDES_VER . '</p>';
+    $imgurl = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
+    print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
+    esc_html_e( ' Instructions and Tips', 'twosides' ); print( '</h3>' );
+    $twosides_date = get_option( 'twosides_date_plugin_activated' ); 
+    echo '<p><img src="' . esc_url($imgurl) . '" alt="logo" height="50"/>' 
+    . esc_html__( 'This plugin last activated on: ', 'twosides' ) 
+    . '<code>'. esc_html($twosides_date) .'</code> Version '. TWOSIDES_VER . '</p>';
 }
         
 //render admin page

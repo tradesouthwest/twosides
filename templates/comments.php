@@ -26,7 +26,7 @@ if( post_password_required() ) { return; }
 <div id="comments" class="comments-area"> 
 
     <?php if( have_comments() ) : ?> 
-    <h4>comments count start</h4>
+
        <ul class="comment-list comments-positive">  
 		<?php 
         $commentp = get_comments( array(

@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) or die( 'X' );
 function twosides_posibkgd_cb() 
 { 
     
-    $def = "#aafaca";
+    $def = "transparent";
     $options = get_option('twosides_admin'); 
     $twosides_color_1 = $options['twosides_posibkgd'];
     if( $twosides_color_1 == '' ) $twosides_color_1 = $def;
@@ -32,7 +32,7 @@ function twosides_posibkgd_cb()
 function twosides_negabkgd_cb() 
 { 
     
-    $def = "#faaa99";
+    $def = "transparent";
     $options = get_option('twosides_admin'); 
     $twosides_color_2 = $options['twosides_negabkgd'];
     if( $twosides_color_2 == '' ) $twosides_color_2 = $def;
