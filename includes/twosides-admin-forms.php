@@ -196,7 +196,7 @@ If you are using a special template file for single posts, you may want to use t
 <dl>
 <dt><b><?php esc_html_e( 'Twosides Shortcodes', 'twosides' ); ?></b></dt>
 <dd></dd>
-<dd class="olds"><?php esc_html_e( 'Shortcode for the single posts pages are automatic and there is a shortcode but it is embedded into the functions of the single page instance.', 'twosides' ); ?><span> [twosides_form_shortcode]</span></dd>
+<dd class="olds"><?php esc_html_e( 'Shortcode for the single posts pages are automatic and there is a shortcode but it is hardcoded as do_shortcode into the functions of the templating instance. Use this shortocode to add a form with buttons to your comments page.', 'twosides' ); ?><span> [twosides_form_shortcode]</span></dd>
 <dd></dd>
 <dt><b><?php esc_html_e( 'For more options, try TwoSides Debate plugin by Tradesouthwest.', 'twosides' ); ?></b></dt> 
 <dd></dd>
