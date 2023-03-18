@@ -40,7 +40,7 @@ https://twosides.tswdev.com/ demo. https://tswdev.com/test/ dev site.
 icon colors #52ae6a #de6565
 
 ### Unsupported Themes 
-Lightning
+Lightning,
 Twenty Twenty-Three
 
 ### Resource Articles 
