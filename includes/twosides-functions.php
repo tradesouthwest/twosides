@@ -113,7 +113,9 @@ if ( isset( $_POST['twosides_commtype'] ) ) {
 function twosides_background_colors_cb()
 {   
     $options = get_option('twosides_admin'); 
-
+    /* 
+     * Defaults and values from options 
+     */
     $def1 = "transparent"; // "#aafaca";
     $twosides_color_1 = $options['twosides_posibkgd'];
     if( $twosides_color_1 == '' ) $twosides_color_1   = esc_attr($def1);

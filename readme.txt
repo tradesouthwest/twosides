@@ -37,9 +37,12 @@ Q.: All comments are showing in one column and not two columns?
 A.: Your theme may not support this plugin. Try another theme or use the instructions that come with the premium version of TwoSides, TwoSides Debate.
 
 == Screenshots ==
+1. Comments displayed as green and red backgrounds
+2. Controls in the admin side settings panel
+3. Instructions and tips 
 
 == Upgrade Notice ==
-
+Upgrade to premium version at https://tradesouthwest.com/blog/store/products/twosides-debate-plugin-for-wordpress/
 == Changelog ==
 = 1.0.1 =
 * corrected url in admin
@@ -47,6 +50,7 @@ A.: Your theme may not support this plugin. Try another theme or use the instruc
 * removed unused files
 * cleaned code in includes folder
 * made default backgrounds transparent
+* updated uninstall
 
 = 1.0.0 =
 * initial release
