@@ -44,6 +44,7 @@ A.: Your theme may not support this plugin. Try another theme or use the instruc
 == Upgrade Notice ==
 Upgrade to premium version at https://tradesouthwest.com/blog/store/products/twosides-debate-plugin-for-wordpress/
 == Changelog ==
+
 = 1.0.1 =
 * corrected url in admin
 * made some style adjustments
@@ -51,6 +52,7 @@ Upgrade to premium version at https://tradesouthwest.com/blog/store/products/two
 * cleaned code in includes folder
 * made default backgrounds transparent
 * updated uninstall
+* synced with github for review
 
 = 1.0.0 =
 * initial release
