@@ -13,7 +13,9 @@ Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
 Split comments into two types of groups. 
 
 == Description ==
-List your comments as opinions or views on two separate sides of the page.
+List your comments as opinions or views on two separate sides of the page. Twosides is exactly that: a plugin that list your opinions or views on two separate sides of the page according to the positive or negative ideology of the comment. 
+The basic premise is for a blog to contain a subject matter in a single post which, can instill a wave of comments that are split into two groups as responses to the single post. Pro/Con, Conservative/Progressive, Beatles/Rolling Stones, Mom/Dad, Product opinions, Positive/Negative Reviews.... endless possibilities.
+Demo at twosides.tswdev.com 
 
 == Features ==
 * Pro / Con styled comments
