@@ -54,7 +54,7 @@ function twosides_get_comment_types()
         $twosides_commtype = wp_filter_nohtml_kses($_POST['twosides_negative']);
     }
     
-        return $twosides_commtype;
+        return sanitize_key($twosides_commtype);
 } 
 
 /**
@@ -70,7 +70,7 @@ function twosides_saving_comment_meta_data($comment_id)
         && ( '' !== $_POST['twosides_commtype'] ) ) 
     
         $commtype = wp_filter_nohtml_kses($_POST['twosides_commtype']);
-        add_comment_meta( $comment_id, 'twosides_commtype', $commtype );
+        add_comment_meta( absint($comment_id), 'twosides_commtype', $commtype );
 }
 /**
  * @id F2
@@ -116,30 +116,25 @@ function twosides_background_colors_cb()
     /* 
      * Defaults and values from options 
      */
-    $def1 = "transparent"; // "#aafaca";
+    // "#aafaca";
     $twosides_color_1 = $options['twosides_posibkgd'];
-    if( $twosides_color_1 == '' ) $twosides_color_1   = esc_attr($def1);
-
-    $def2 = "transparent"; // "#faaa99";
+    if( $twosides_color_1 == '' ) $twosides_color_1    = esc_attr("transparent");
+    // "#faaa99";
     $twosides_color_2 = $options['twosides_negabkgd'];
-    if( $twosides_color_2 == '' ) $twosides_color_2   = esc_attr($def2);  
-    
-    $def7 = '#aafaca';  
+    if( $twosides_color_2  == '' ) $twosides_color_2   = esc_attr("transparent");  
+    // border present by default
     $twosides_posibord = $options['twosides_posibord'];
-    if( $twosides_posibord == '' ) $twosides_posibord = esc_attr($def7); 
-
-    $def6 = '#faaa99';  
+    if( $twosides_posibord == '' ) $twosides_posibord  = esc_attr('#aafaca'); 
+    // border color
     $twosides_negabord = $options['twosides_negabord'];
-    if( $twosides_negabord == '' ) $twosides_negabord = esc_attr($def6);  
+    if( $twosides_negabord == '' ) $twosides_negabord  = esc_attr('#faaa99');  
     
     $htm = ''; 
     $htm .= 
     '.prohead-count,.comment-list.comments-positive .comment,#actionPositive{
-      background-color: '. $twosides_color_1 .';border:1px solid '. $twosides_posibord .';
-      margin-bottom: 1%;}
+      background-color: '. esc_attr($twosides_color_1) .';border:1px solid '. esc_attr($twosides_posibord) .';margin-bottom: 1%;}
     .conhead-count,.comment-list.comments-negative .comment, #actionNegative{
-      background-color: '. $twosides_color_2 .';border:1px solid '. $twosides_negabord .';
-      margin-bottom: 1%;}';
+      background-color: '. esc_attr($twosides_color_2) .';border:1px solid '. esc_attr($twosides_negabord) .';margin-bottom: 1%;}';
                 
         wp_register_style( 'twosides-entry-set', false );
         wp_enqueue_style(   'twosides-entry-set' );
@@ -154,21 +149,19 @@ function twosides_background_colors_cb()
 
 function twosides_addclass_comment_formPositive()
 {
-    $tws_footer = ''; 
-   
     $action = empty( $_REQUEST['action_positive'] ) 
-            ? false : $_REQUEST['action_positive'];
+            ? false : sanitize_text_field( $_REQUEST['action_positive'] );
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && $action != false ) 
     {  
         if( isset(  $_POST['twosides_positive'] ) )
         { 
-            $tws_footer .=  '<script id="twosides-ftrposi">
+            echo '<script id="twosides-ftrposi">
             var element = document.getElementById("respond");
                 element.classList.add("twoside-positive");
             </script>';
         }
-    }
-            echo $tws_footer;      
+    }      
 }
 
 /**
@@ -179,19 +172,17 @@ function twosides_addclass_comment_formPositive()
 
 function twosides_addclass_comment_formNegative()
 {
-    $tws_footer = '';
-    
     $action = empty( $_REQUEST['action_negative'] ) 
-            ? false : $_REQUEST['action_negative'];
+            ? false : sanitize_text_field( $_REQUEST['action_negative'] );
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && $action !=  false ) 
     {  
         if( isset( $_POST['twosides_negative'] ) )
         {    
-            $tws_footer .= '<script id="twosides-ftrnega">
+            echo '<script id="twosides-ftrnega">
             var element = document.getElementById("respond");
                 element.classList.add("twoside-negative");
             </script>';
-        }
-    } 
-            echo $tws_footer; 
+        } 
+    }
 }
