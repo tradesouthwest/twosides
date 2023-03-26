@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) { 
     $('div#comments').addClass('twosides');
-
+    
 });//end noconflict
 jQuery(document).ready(function($) { 
     $( 'li.twosides_positive:last-child' ).addClass('lastpositive');

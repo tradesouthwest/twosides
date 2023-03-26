@@ -1,116 +1,123 @@
 <?php 
+/**
+ * @since ver: 1.0.1
+ * Author: Tradesouthwest
+ * Author URI: http://tradesouthwest.com
+ * @package twosides
+ * @subpackage includes/twosides-admin-forms
+ */
 // If this file is called directly, abort.
 defined( 'ABSPATH' ) or die( 'X' ); 
 /**
  * Render the branding colors option
  * @string $def = default color
- * @since  1.0.3
+ * @since  1.0.1
  */
 function twosides_posibkgd_cb() 
 { 
     
-    $def = "transparent";
-    $options = get_option('twosides_admin'); 
+    $def              = "transparent";
+    $options          = get_option('twosides_admin'); 
     $twosides_color_1 = $options['twosides_posibkgd'];
-    if( $twosides_color_1 == '' ) $twosides_color_1 = $def;
+    if( $twosides_color_1 == '' ) $twosides_color_1 = esc_attr($def);
     ?>
     <label class="olmin"><?php esc_html_e( 
         'Select color for background of positive comments.', 
                                            'twosides'  ); ?></label>
     <input type="text" 
-           id="color_wrap_a" 
+           id="color_wrap_twosides_posibkgd" 
            name="twosides_admin[twosides_posibkgd]"
            class="twosides-color-field" data-default-color="#aafaca"
-           value="<?php echo $twosides_color_1; ?>"><br>
+           value="<?php echo esc_attr($twosides_color_1); ?>"><br>
 <?php     
 }
 /**
  * Render the branding colors option
  * @string $def = default title
- * @since  1.0.3
+ * @since  1.0.1
  */
 function twosides_negabkgd_cb() 
 { 
     
-    $def = "transparent";
-    $options = get_option('twosides_admin'); 
+    $def              = "transparent";
+    $options          = get_option('twosides_admin'); 
     $twosides_color_2 = $options['twosides_negabkgd'];
-    if( $twosides_color_2 == '' ) $twosides_color_2 = $def;
+    if( $twosides_color_2 == '' ) $twosides_color_2 = esc_attr($def);
     ?>
     <label class="olmin"><?php esc_html_e( 
         'Select color for background of negative comments.', 
                                            'twosides'  ); ?></label>
     <input type="text" 
-           id="color_wrap_b" 
+           id="color_wrap_twosides_negabkgd" 
            name="twosides_admin[twosides_negabkgd]" 
            class="twosides-color-field" data-default-color="#faaa99" 
-           value="<?php echo $twosides_color_2; ?>"><br>
+           value="<?php echo esc_attr($twosides_color_2); ?>"><br>
 <?php     
 }
 /**
  * Render the branding colors option
- * @string $def = default color
- * @since  1.0.3
+ * @string $def = default color Not using sanitize_hex_color() in case of transparent value.
+ * @since  1.0.1
  */
 function twosides_posibord_cb() 
 { 
     
-    $def = "#aafaca";
-    $options = get_option('twosides_admin'); 
+    $def               = "#aafaca";
+    $options           = get_option('twosides_admin'); 
     $twosides_posibord = $options['twosides_posibord'];
-    if( $twosides_posibord == '' ) $twosides_posibord = $def;
+    if( $twosides_posibord == '' ) $twosides_posibord = esc_attr($def);
     ?>
     <label class="olmin"><?php esc_html_e( 'Select color for borders of positive comments.', 
                                            'twosides'  ); ?></label>
     <input type="text" 
-           id="color_wrap_a" 
+           id="color_wrap_twosides_posibord" 
            name="twosides_admin[twosides_posibord]"
            class="twosides-color-field" data-default-color="#aafaca"
-           value="<?php echo $twosides_posibord; ?>"><br>
+           value="<?php echo esc_attr($twosides_posibord); ?>"><br>
 <?php     
 }
 /**
  * Render the branding colors option
  * @string $def = default color
- * @since  1.0.2
+ * @since  1.0.1
  */
 function twosides_negabord_cb() 
 { 
     
-    $def = "#faaa99";
-    $options = get_option('twosides_admin'); 
+    $def               = "#faaa99";
+    $options           = get_option('twosides_admin'); 
     $twosides_negabord = $options['twosides_negabord'];
-    if( $twosides_negabord == '' ) $twosides_negabord = $def;
+    if( $twosides_negabord == '' ) $twosides_negabord = esc_attr($def);
     ?>
     <label class="olmin"><?php esc_html_e( 'Select color for borders of negative comments.', 
                                            'twosides'  ); ?></label>
     <input type="text" 
-           id="color_wrap_a" 
+           id="color_wrap_twosides_negabord" 
            name="twosides_admin[twosides_negabord]"
            class="twosides-color-field" data-default-color="#faaa99"
-           value="<?php echo $twosides_negabord; ?>"><br>
+           value="<?php echo esc_attr($twosides_negabord); ?>"><br>
 <?php     
 }
 /**
  * Render the branding colors option
  * @string $def = default color
- * @since  1.0.2
+ * @since  1.0.1
  */
 function twosides_submits_cb() 
 { 
     
-    $def = "#ffffff";
-    $options = get_option('twosides_admin'); 
+    $def              = "#ffffff";
+    $options          = get_option('twosides_admin'); 
     $twosides_submits = $options['twosides_submits'];
-    if( $twosides_submits == '' ) $twosides_submits = $def;
+    if( $twosides_submits == '' ) $twosides_submits = esc_attr($def);
     ?>
     <label class="olmin"><?php esc_html_e( 'Select pro/con buttons text color.', 
                                            'twosides'  ); ?></label>
     <input type="text" 
-           id="color_wrap_a" 
+           id="color_wrap_twosides_submits" 
            name="twosides_admin[twosides_submits]"
            class="twosides-color-field" data-default-color="#ffffff"
-           value="<?php echo $twosides_submits; ?>"><br>
+           value="<?php echo esc_attr($twosides_submits); ?>"><br>
 <?php     
 }
 
@@ -120,14 +127,13 @@ function twosides_submits_cb()
  */
 function twosides_posiheader_cb()
 {
-    $options = get_option('twosides_admin'); 
+    $options             = get_option('twosides_admin'); 
     $twosides_posiheader = (empty($options['twosides_posiheader'] )) 
-                ? "" : $options['twosides_posiheader']; ?>
-    <label class="olmin" for="twosides_posiheader"><?php esc_html_e( 
-'Set text field.', 'twosides' ); ?></label><br>
+                           ? "" : $options['twosides_posiheader']; ?>
+    <label class="olmin" for="twosides_posiheader"><?php esc_html_e( 'Set text field.', 
+                                                    'twosides' ); ?></label><br>
     <input type="text" name="twosides_admin[twosides_posiheader]" 
-           value="<?php echo esc_attr( $twosides_posiheader ); ?>" 
-           size="35"/>
+           value="<?php echo esc_attr( $twosides_posiheader ); ?>" size="35"/>
     <?php 
 }
 /** 
@@ -136,14 +142,13 @@ function twosides_posiheader_cb()
  */
 function twosides_negaheader_cb()
 {
-    $options = get_option('twosides_admin'); 
+    $options             = get_option('twosides_admin'); 
     $twosides_negaheader = (empty($options['twosides_negaheader'] )) 
-                ? "" : $options['twosides_negaheader']; ?>
-    <label class="olmin" for="twosides_negaheader"><?php esc_html_e( 
-'Set text field.', 'twosides' ); ?></label><br>
+                           ? "" : $options['twosides_negaheader']; ?>
+    <label class="olmin" for="twosides_negaheader"><?php esc_html_e( 'Set text field.', 
+                                                    'twosides' ); ?></label><br>
     <input type="text" name="twosides_admin[twosides_negaheader]" 
-           value="<?php echo esc_attr( $twosides_negaheader ); ?>" 
-           size="35"/>
+           value="<?php echo esc_attr( $twosides_negaheader ); ?>" size="35"/>
     <?php 
 }
 
@@ -153,11 +158,11 @@ function twosides_negaheader_cb()
  */
 function twosides_negatxt_cb()
 {
-    $options = get_option('twosides_admin'); 
+    $options          = get_option('twosides_admin'); 
     $twosides_negatxt = (empty($options['twosides_negatxt'] )) 
                 ? "" : $options['twosides_negatxt']; ?>
-    <label class="olmin" for="twosides_negatxt"><?php esc_html_e( 
-'Set text field.', 'twosides' ); ?></label>
+    <label class="olmin" for="twosides_negatxt"><?php esc_html_e( 'Set text field.', 
+                                                'twosides' ); ?></label>
     <input type="text" name="twosides_admin[twosides_negatxt]" 
            value="<?php echo esc_attr( $twosides_negatxt ); ?>" 
            size="15"/>
@@ -169,14 +174,13 @@ function twosides_negatxt_cb()
  */
 function twosides_positxt_cb()
 {
-    $options = get_option('twosides_admin'); 
+    $options          = get_option('twosides_admin'); 
     $twosides_positxt = (empty($options['twosides_positxt'] )) 
-                ? "" : $options['twosides_positxt']; ?>
-    <label class="olmin" for="twosides_positxt"><?php esc_html_e( 
-'Set text field.', 'twosides' ); ?></label>
+                        ? "" : $options['twosides_positxt']; ?>
+    <label class="olmin" for="twosides_positxt"><?php esc_html_e( 'Set text field.', 
+                                                'twosides' ); ?></label>
     <input type="text" name="twosides_admin[twosides_positxt]" 
-           value="<?php echo esc_attr( $twosides_positxt ); ?>" 
-           size="15"/>
+           value="<?php echo esc_attr( $twosides_positxt ); ?>" size="15"/>
     <?php 
 }
 

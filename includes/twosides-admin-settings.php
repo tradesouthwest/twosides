@@ -1,11 +1,11 @@
 <?php
-/*
-@since ver: 1.0.1
-Author: Tradesouthwest
-Author URI: http://tradesouthwest.com
-@package twosides
-@subpackage includes/twosides-admin-settings
-*/
+/**
+ * @since ver: 1.0.1
+ * Author: Tradesouthwest
+ * Author URI: http://tradesouthwest.com
+ * @package twosides
+ * @subpackage includes/twosides-admin-settings
+ */
 // If this file is called directly, abort.
 defined( 'ABSPATH' ) or die( 'X' ); 
 
@@ -152,13 +152,13 @@ function twosides_docs_section_cb()
 //render admin page
 function twosides_options_page() 
 {
-    // check user capabilities
+    // Check user capabilities
     if ( ! current_user_can( 'manage_options' ) ) return;
-    // check if the user have submitted the settings
-    // wordpress will add the "settings-updated" $_GET parameter to the url
+    // Check if the user have submitted the settings
+    // Wordpress will add the "settings-updated" $_GET parameter to the url
 
-    // show error/update messages
-    //settings_errors( 'twosides_messages' );
+    // Show error/update messages
+    // settings_errors( 'twosides_messages' );
     $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'twosides_admin';
     ?>
     <div class="wrap wrap-twosides-admin">

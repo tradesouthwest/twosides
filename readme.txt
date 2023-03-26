@@ -23,20 +23,18 @@ Demo at twosides.tswdev.com
 * Set background colors for comments and opener buttons
 * One button opens positive comments and the other opens negative
 * You can name comments anything you want in admin panel. (pro/con, upside/downside, etc.)
+* Change wording in comments count counter and buttons.
 
 == Installation ==
-
 This section describes how to install the plugin and get it working.
 1. Upload the plugin to the /wp-content/plugins/ directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
-
 Q.: Can I change the background colors of individual boxes?
-A.: There is a chart in your admin page with the names of all the selectors. If you know CSS then you can use any CSS editor to add your background colors to.
-
+A.: There is an option in your admin page to change background colors and the border colrs of each category of comment box.
 Q.: All comments are showing in one column and not two columns?
-A.: Your theme may not support this plugin. Try another theme or use the instructions that come with the premium version of TwoSides, TwoSides Debate.
+A.: Your theme may not support this plugin. Try another theme or use the instructions that comes with TwoSides, or update to TwoSides Debate.
 
 == Screenshots ==
 1. Comments displayed as green and red backgrounds
@@ -44,7 +42,8 @@ A.: Your theme may not support this plugin. Try another theme or use the instruc
 3. Instructions and tips 
 
 == Upgrade Notice ==
-Upgrade to premium version at https://tradesouthwest.com/blog/store/products/twosides-debate-plugin-for-wordpress/
+Upgrade to premium version at [tradesouthwest plugins](https://tradesouthwest.com/blog/store/products/twosides-debate-plugin-for-wordpress/)
+
 == Changelog ==
 
 = 1.0.1 =
@@ -55,6 +54,7 @@ Upgrade to premium version at https://tradesouthwest.com/blog/store/products/two
 * made default backgrounds transparent
 * updated uninstall
 * synced with github for review
+* sanity and escaping throughout 
 
 = 1.0.0 =
 * initial release
