@@ -9,7 +9,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Twosides
- * 
+ * @since 1.0.1
  */
 global $post, $comments; $commentn = $commentp = '';
 if ( !comments_open() ) {
@@ -40,7 +40,7 @@ if( post_password_required() ) { return; }
 			'short_ping' => true,
 			'avatar_size' => 34, 
             ), 
-            $commentp 
+            $commentp
         ); 
 	?> 
 	</ul> 
@@ -58,7 +58,7 @@ if( post_password_required() ) { return; }
 			'short_ping' => true,
 			'avatar_size' => 34, 
             ), 
-            $commentn 
+            $commentn
         ); 
 	?> 
 	</ul> 
@@ -68,7 +68,7 @@ if( post_password_required() ) { return; }
     ?>
 
         <nav class="navigation comment-navigation" role="navigation">
-            <h1 class="screen-reader-text section-heading"><?php _e( 'Comment navigation', 'twosides' ); ?></h1>
+            <h1 class="screen-reader-text section-heading"><?php esc_html_e( 'Comment navigation', 'twosides' ); ?></h1>
             <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twosides' ) ); ?></div>
             <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twosides' ) ); ?></div>
         </nav>
@@ -77,7 +77,7 @@ if( post_password_required() ) { return; }
     ?>
     <?php 
     if ( ! comments_open() && get_comments_number() ) : ?>
-        <p class="no-comments"><?php _e( 'Comments are closed.' , 'twosides' ); ?></p>
+        <p class="no-comments"><?php esc_html_e( 'Comments are closed.' , 'twosides' ); ?></p>
     <?php 
     endif; 
     ?>
@@ -86,8 +86,8 @@ if( post_password_required() ) { return; }
 
     <?php 
     /* ******** ******** ******** ********
-    * Starts slide-in form for commenting 
-      * ******* ******** ******** ******** */
+     * Starts slide-in form for commenting 
+     * ******* ******** ******** ******** */
     ?>
     
     <div id="twosidesMain">
