@@ -34,7 +34,7 @@ This section describes how to install the plugin and get it working.
 Q.: Can I change the background colors of individual boxes?
 A.: There is an option in your admin page to change background colors and the border colrs of each category of comment box.
 Q.: All comments are showing in one column and not two columns?
-A.: Your theme may not support this plugin. Try another theme or use the instructions that comes with TwoSides, or update to TwoSides Debate.
+A.: Your theme may not support this plugin, due to some options generated. Try another theme or use the instructions that comes with TwoSides, or update to TwoSides Debate.
 
 == Screenshots ==
 1. Comments displayed as green and red backgrounds
