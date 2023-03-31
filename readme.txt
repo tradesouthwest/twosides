@@ -5,17 +5,17 @@ Tags:  reviews, comments, opinions, pro con, split comments, responsive, forms, 
 Requires at least: 3.8
 Tested up to: 6.1.1
 Requires PHP: 5.2
-Stable tag:   1.0.1
+Stable tag:   1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
 
-Split comments into two types of groups. 
+Split comments into two types of commenting groups. 
 
 == Description ==
 List your comments as opinions or views on two separate sides of the page. Twosides is exactly that: a plugin that list your opinions or views on two separate sides of the page according to the positive or negative ideology of the comment. 
 The basic premise is for a blog to contain a subject matter in a single post which, can instill a wave of comments that are split into two groups as responses to the single post. Pro/Con, Conservative/Progressive, Beatles/Rolling Stones, Mom/Dad, Product opinions, Positive/Negative Reviews.... endless possibilities.
-Demo at twosides.tswdev.com 
+Demo at https://twosides.tswdev.com 
 
 == Features ==
 * Pro / Con styled comments
@@ -45,6 +45,11 @@ A.: Your theme may not support this plugin, due to some options generated. Try a
 Upgrade to premium version at [tradesouthwest plugins](https://tradesouthwest.com/blog/store/products/twosides-debate-plugin-for-wordpress/)
 
 == Changelog ==
+= 1.0.2 =
+* more sanity and escaping
+* return not echo some functions
+* esc_urls in admin files
+* added doc blocks
 
 = 1.0.1 =
 * corrected url in admin

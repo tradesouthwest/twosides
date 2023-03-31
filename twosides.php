@@ -6,7 +6,7 @@ Description: Display comments in a side by side fashion and divide each side as 
 Version:           1.0.2
 Author:            Larry Judd
 Author URI:        https://tradesouthwest.com
-Stable tag:        1.0.1
+Stable tag:        1.0.2
 License:           GPLv3
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */ /** @since file_version 20230331.102 */
