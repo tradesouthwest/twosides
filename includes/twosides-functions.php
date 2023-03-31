@@ -21,7 +21,7 @@ add_action( 'comment_post', 'twosides_saving_comment_meta_data');
  * Insert input for twosides type to add to form
  * 
  * @id A7
- * @since 1.0.0
+ * @since 1.0.2
  * @return void
  */
 
@@ -35,7 +35,7 @@ function twosides_verify_comment_metadata()
            value="<?php echo esc_attr($twosides_commtype); ?>"/>
     <?php 
     
-    echo ob_get_clean();
+    return ob_get_clean();
 }
 
 /**
@@ -81,7 +81,8 @@ function twosides_saving_comment_meta_data($comment_id)
 
 function twosides_redirect_after_comment($location)
 {
-    return $_SERVER["HTTP_REFERER"];
+    $refurl = $_SERVER["HTTP_REFERER"];
+    return esc_url_raw($refurl);
 }
 
 /**
@@ -96,7 +97,9 @@ function twosides_redirect_after_comment($location)
 function twosides_verify_comment_type_data( $commentdata )
 {
     if ( isset( $_POST['twosides_commtype'] ) ) {
-    $commentdata['twosides_commtype'] = twosides_sanitize_post($_POST['twosides_commtype']);
+    $commentdata['twosides_commtype'] = twosides_sanitize_post(
+                                            $_POST['twosides_commtype']
+                                        );
     }
     return $commentdata;
 
@@ -156,10 +159,10 @@ function twosides_addclass_comment_formPositive()
     {  
         if( isset(  $_POST['twosides_positive'] ) )
         { 
-            echo '<script id="twosides-ftrposi">
+            print( '<script id="twosides-ftrposi">
             var element = document.getElementById("respond");
                 element.classList.add("twoside-positive");
-            </script>';
+            </script>' );
         }
     }      
 }
@@ -179,10 +182,10 @@ function twosides_addclass_comment_formNegative()
     {  
         if( isset( $_POST['twosides_negative'] ) )
         {    
-            echo '<script id="twosides-ftrnega">
+            print( '<script id="twosides-ftrnega">
             var element = document.getElementById("respond");
                 element.classList.add("twoside-negative");
-            </script>';
+            </script>' );
         } 
     }
 }
