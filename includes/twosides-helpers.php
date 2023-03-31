@@ -1,6 +1,7 @@
 <?php 
 /**
- * Meta boxes for admin display of additional commentsw information
+ * Meta boxes for admin display of additional commenting information
+ * @since 1.0.2
  * @package twosides
  */
 defined( 'ABSPATH' ) or die( 'X' );
