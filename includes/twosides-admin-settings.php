@@ -158,8 +158,8 @@ function twosides_options_page()
     // Wordpress will add the "settings-updated" $_GET parameter to the url
     // Show error/update messages
     // settings_errors( 'twosides_messages' );
-    $active_tab = isset( filter_input( INPUT_GET, $_GET[ 'tab' ] ) )
-                    ? filter_input( INPUT_GET, $_GET[ 'tab' ] ) : 'twosides_admin';
+    $active_tab = isset( twosides_sanitize_get( $_GET[ 'tab' ] ) )
+                ? twosides_sanitize_get( $_GET[ 'tab' ] ) : 'twosides_admin';
     ?>
     <div class="wrap wrap-twosides-admin">
     
