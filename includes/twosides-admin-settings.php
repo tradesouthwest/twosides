@@ -140,10 +140,10 @@ function twosides_admin_section_cb()
 // instructions docs section content cb
 function twosides_docs_section_cb()
 { 
-    $imgurl        = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
-    $twosides_date = get_option( 'twosides_date_plugin_activated' ); 
+    $imgurl = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
     print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
     esc_html_e( ' Instructions and Tips', 'twosides' ); print( '</h3>' );
+    $twosides_date = get_option( 'twosides_date_plugin_activated' ); 
     echo '<p><img src="' . esc_url($imgurl) . '" alt="logo" height="50"/>' 
     . esc_html__( 'This plugin last activated on: ', 'twosides' ) 
     . '<code>'. esc_html($twosides_date) .'</code> Version '. TWOSIDES_VER . '</p>';
@@ -158,8 +158,8 @@ function twosides_options_page()
     // Wordpress will add the "settings-updated" $_GET parameter to the url
     // Show error/update messages
     // settings_errors( 'twosides_messages' );
-    $active_tab = isset( twosides_sanitize_get( $_GET[ 'tab' ] ) )
-                ? twosides_sanitize_get( $_GET[ 'tab' ] ) : 'twosides_admin';
+    $active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_text_field($_GET[ 'tab' ])
+                 : esc_attr( 'twosides_admin' );
     ?>
     <div class="wrap wrap-twosides-admin">
     
@@ -168,11 +168,11 @@ function twosides_options_page()
     
     <h2 class="nav-tab-wrapper">
     <a href="?page=twosides&tab=twosides_admin" 
-       class="nav-tab <?php echo $active_tab == 'twosides_admin' ? 
+       class="nav-tab <?php echo esc_attr($active_tab) == 'twosides_admin' ? 
        'nav-tab-active' : ''; ?>">
        <?php esc_html_e( 'Options', 'twosides' ); ?></a>
     <a href="?page=twosides&tab=twosides_docs" 
-       class="nav-tab <?php echo $active_tab == 'twosides_docs' ? 
+       class="nav-tab <?php echo esc_attr($active_tab) == 'twosides_docs' ? 
        'nav-tab-active' : ''; ?>">
        <?php esc_html_e( 'Twosides Documentation', 'twosides' ); ?></a></h2>
        
