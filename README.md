@@ -1,5 +1,6 @@
 
 # TwoSides 
+Best theme for TwoSides plugin: Theme: ColorMag by ThemeGrill. 
 
 ## Load order
 
