@@ -1,7 +1,11 @@
 <?php 
 /**
-* @package twosides
-*/
+ * Shortcodes for plugin
+ *
+ * @file_version 1.0.2
+ * @package twosides
+ * @subpackage admin/twosides-shortcodes.php
+ */
 defined( 'ABSPATH' ) or die( 'X' );
 
 // @id F1
@@ -13,9 +17,9 @@ add_filter( 'the_content', 'twosides_shortcode_autoto_post' );
  *                             trackback, or pingback.
  */
 function comments_twosides_get_comment_positive_count() {
-  global $post, $comments, $wp_query; //, $comments_by_type;
+    global $post, $comments, $wp_query; 
   
-   $num_comments = get_comments(
+    $num_comments = get_comments(
     array(
         'post_id'    => get_the_ID(),
         'meta_key'   => 'twosides_commtype',
@@ -24,7 +28,9 @@ function comments_twosides_get_comment_positive_count() {
     ) );
 
     ob_start(); 
-    echo '<p class="twosides-prohead">'. absint($num_comments) .' <span class="prohead-count" style="width:' . esc_attr($num_comments) . 'em"> </span></p>'; 
+    echo '<p class="twosides-prohead">'. absint($num_comments) 
+    .' <span class="prohead-count" style="width:' . esc_attr($num_comments) 
+    . 'em"> </span></p>'; 
     $comment_pos = ob_get_clean();
     return wp_kses_post($comment_pos);
 }
@@ -33,7 +39,7 @@ function comments_twosides_get_comment_positive_count() {
 */
 function comments_twosides_get_comment_negative_count() {
     global $post, $comments, $wp_query; 
-    //$commtype 
+
     $num_comments = get_comments (
     array(
         'post_id'    => get_the_ID(),
@@ -42,30 +48,34 @@ function comments_twosides_get_comment_negative_count() {
         'count'      => true  
     ) );
 
-    ob_start(); echo '<p class="twosides-conhead">'. absint($num_comments) .' <span class="conhead-count" style="width:'. esc_attr($num_comments) .'em;"> </span></p>'; 
+    ob_start(); echo '<p class="twosides-conhead">'. absint($num_comments) 
+    .' <span class="conhead-count" style="width:'. esc_attr($num_comments) 
+    .'em;"> </span></p>'; 
     $comment_con = ob_get_clean();
     return wp_kses_post($comment_con);
 }
+
 /**
- * Shortcode 
+ * Shortcode `[twosides_form_header]`
  *
- * @returns $content
+ * @since 1.0.0
+ * @return $content No attributes.
  */
 function twosides_header_form_shortcode( $atts ='', $content = null)
 { 
     if( is_single() ) :    
         $options = get_option('twosides_admin'); 
         
-          $twosides_positxt     = $options['twosides_positxt'];
+        $twosides_positxt     = $options['twosides_positxt'];
           if( $twosides_positxt == '' ) $twosides_positxt     = esc_html(" + ");  
         
-          $twosides_negatxt     = $options['twosides_negatxt'];
+        $twosides_negatxt     = $options['twosides_negatxt'];
           if( $twosides_negatxt == '' ) $twosides_negatxt     = esc_html(" - ");  
         
-          $twosides_posiheader  = $options['twosides_posiheader'];
+        $twosides_posiheader  = $options['twosides_posiheader'];
           if( $twosides_posiheader == '' ) $twosides_posiheader = esc_html("Positive Comment");  
         
-          $twosides_negaheader  = $options['twosides_negaheader'];
+        $twosides_negaheader  = $options['twosides_negaheader'];
           if( $twosides_negaheader == '' ) $twosides_negaheader = esc_html("Negative Comment");
           
         $legendP = comments_twosides_get_comment_positive_count();
@@ -122,7 +132,7 @@ function twosides_shortcode_autoto_post( $content )
     
     switch( $post->post_type ) {
       case 'post':
-        return $content . '[twosides_form_header]'; 
+        return $content . stripslashes('[twosides_form_header]'); 
 
       case 'page':
         return $content;
