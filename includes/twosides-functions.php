@@ -93,10 +93,10 @@ function twosides_redirect_after_comment($location)
  * @param string $commentdata Adds field to valid data when passed to wp-comments-post.php
  */
 
-function twosides_verify_comment_type_data($commentdata )
+function twosides_verify_comment_type_data( $commentdata )
 {
-if ( isset( $_POST['twosides_commtype'] ) ) {
-        $commentdata['twosides_commtype'] = $_POST['twosides_commtype'];
+    if ( isset( $_POST['twosides_commtype'] ) ) {
+    $commentdata['twosides_commtype'] = twosides_sanitize_post($_POST['twosides_commtype']);
     }
     return $commentdata;
 
@@ -185,4 +185,27 @@ function twosides_addclass_comment_formNegative()
             </script>';
         } 
     }
+}
+/**
+ * Sanitize POST data
+ * @since 1.0.2
+ * @see https://tommcfarlin.com/sanitize-post-data/
+ */
+function twosides_sanitize_post($data)
+{
+    if(!$data) return; 
+    $rtrn = stripslashes( sanitize_text_field( filter_input(INPUT_POST, $data) ) );
+    
+    return $rtrn;
+}
+/**
+ * Sanitize GET data
+ * @since 1.0.2
+ */
+function twosides_sanitize_get($data)
+{
+    if(!$data) return; 
+    $rtrn = stripslashes( sanitize_text_field( filter_input(INPUT_POST, $data) ) );
+    
+    return $rtrn;
 }
