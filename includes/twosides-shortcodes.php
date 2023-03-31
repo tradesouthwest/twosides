@@ -120,7 +120,7 @@ endif;
  * @id F1
  * Auto post shortcode into $content
  *
- * @since 1.0.3
+ * @since 1.0.2
  * @return $content
  */
 
