@@ -130,8 +130,8 @@ function twosides_posiheader_cb()
     $options             = get_option('twosides_admin'); 
     $twosides_posiheader = (empty($options['twosides_posiheader'] )) 
                            ? "" : $options['twosides_posiheader']; ?>
-    <label class="olmin" for="twosides_posiheader"><?php esc_html_e( 'Set text field.', 
-                                                    'twosides' ); ?></label><br>
+    <label class="olmin" for="twosides_posiheader"><?php esc_html_e( 
+    'Set text field.', 'twosides' ); ?></label><br>
     <input type="text" name="twosides_admin[twosides_posiheader]" 
            value="<?php echo esc_attr( $twosides_posiheader ); ?>" size="35"/>
     <?php 
@@ -145,8 +145,8 @@ function twosides_negaheader_cb()
     $options             = get_option('twosides_admin'); 
     $twosides_negaheader = (empty($options['twosides_negaheader'] )) 
                            ? "" : $options['twosides_negaheader']; ?>
-    <label class="olmin" for="twosides_negaheader"><?php esc_html_e( 'Set text field.', 
-                                                    'twosides' ); ?></label><br>
+    <label class="olmin" for="twosides_negaheader"><?php esc_html_e( 
+    'Set text field.', 'twosides' ); ?></label><br>
     <input type="text" name="twosides_admin[twosides_negaheader]" 
            value="<?php echo esc_attr( $twosides_negaheader ); ?>" size="35"/>
     <?php 
@@ -161,8 +161,8 @@ function twosides_negatxt_cb()
     $options          = get_option('twosides_admin'); 
     $twosides_negatxt = (empty($options['twosides_negatxt'] )) 
                 ? "" : $options['twosides_negatxt']; ?>
-    <label class="olmin" for="twosides_negatxt"><?php esc_html_e( 'Set text field.', 
-                                                'twosides' ); ?></label>
+    <label class="olmin" for="twosides_negatxt"><?php esc_html_e( 
+    'Set text field.', 'twosides' ); ?></label>
     <input type="text" name="twosides_admin[twosides_negatxt]" 
            value="<?php echo esc_attr( $twosides_negatxt ); ?>" 
            size="15"/>
@@ -177,8 +177,8 @@ function twosides_positxt_cb()
     $options          = get_option('twosides_admin'); 
     $twosides_positxt = (empty($options['twosides_positxt'] )) 
                         ? "" : $options['twosides_positxt']; ?>
-    <label class="olmin" for="twosides_positxt"><?php esc_html_e( 'Set text field.', 
-                                                'twosides' ); ?></label>
+    <label class="olmin" for="twosides_positxt"><?php esc_html_e( 
+    'Set text field.', 'twosides' ); ?></label>
     <input type="text" name="twosides_admin[twosides_positxt]" 
            value="<?php echo esc_attr( $twosides_positxt ); ?>" size="15"/>
     <?php 
@@ -186,10 +186,11 @@ function twosides_positxt_cb()
 
 /**
  * render information section
- * @since 1.0.1
+ * @since 1.0.2
  */
 function twosides_docs_cb() 
-{
+{ 
+$pluguri = "https://themes.tradesouthwest.com/wordpress/plugins/";
 ?>
 <div class="twosides-support">
 
@@ -204,7 +205,7 @@ If you are using a special template file for single posts, you may want to use t
 <dd></dd>
 <dt><b><?php esc_html_e( 'For more options, try TwoSides Debate plugin by Tradesouthwest.', 'twosides' ); ?></b></dt> 
 <dd></dd>
-<dd><a class="button primary" href="https://themes.tradesouthwest.com/wordpress/plugins/" title="upgrade for twosides" target="_blank"><?php esc_html_e( 'TwoSides Debate', 'twosides' ); ?></a></dd>
+<dd><a class="button primary" href="<?php echo esc_url( $pluguri ); ?>" title="upgrade for twosides" target="_blank"><?php esc_html_e( 'TwoSides Debate', 'twosides' ); ?></a></dd>
 <dd></dd>
 
 <dt><?php esc_html_e( 'With an upgrade of Twosides you can add the following features:', 'twosides' ); ?></dt>
@@ -214,7 +215,7 @@ If you are using a special template file for single posts, you may want to use t
 <dd>*<?php esc_html_e( 'Turn on or off counters and other assets on page', 'twosides' ); ?></dd>
 <dd>*<?php esc_html_e( 'Backend functionality and debug mode for optimizations.', 'twosides' ); ?></dd>
 <dd>*<?php esc_html_e( 'Documentation for making alterations to comment form code.', 'twosides' ); ?></dd>
-<dd>*<?php esc_html_e( 'Support from author team for advanced usages (90 days).', 'twosides' ); ?></dd>
+<dd>*<?php esc_html_e( 'Support from author team for advanced usages (180 days).', 'twosides' ); ?></dd>
 
 <dd></dd>
 </dl>
