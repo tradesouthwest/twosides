@@ -140,10 +140,10 @@ function twosides_admin_section_cb()
 // instructions docs section content cb
 function twosides_docs_section_cb()
 { 
-    $imgurl = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
+    $imgurl        = TWOSIDES_URL . '/library/imgs/icon-128x128.png';
+    $twosides_date = get_option( 'twosides_date_plugin_activated' ); 
     print( '<h3><span class="dashicons dashicons-paperclip"></span> ' );
     esc_html_e( ' Instructions and Tips', 'twosides' ); print( '</h3>' );
-    $twosides_date = get_option( 'twosides_date_plugin_activated' ); 
     echo '<p><img src="' . esc_url($imgurl) . '" alt="logo" height="50"/>' 
     . esc_html__( 'This plugin last activated on: ', 'twosides' ) 
     . '<code>'. esc_html($twosides_date) .'</code> Version '. TWOSIDES_VER . '</p>';
@@ -156,10 +156,10 @@ function twosides_options_page()
     if ( ! current_user_can( 'manage_options' ) ) return;
     // Check if the user have submitted the settings
     // Wordpress will add the "settings-updated" $_GET parameter to the url
-
     // Show error/update messages
     // settings_errors( 'twosides_messages' );
-    $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'twosides_admin';
+    $active_tab = isset( filter_input( INPUT_GET, $_GET[ 'tab' ] ) )
+                    ? filter_input( INPUT_GET, $_GET[ 'tab' ] ) : 'twosides_admin';
     ?>
     <div class="wrap wrap-twosides-admin">
     
