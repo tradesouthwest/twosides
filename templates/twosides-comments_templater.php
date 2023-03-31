@@ -4,7 +4,7 @@
  *
  * This is the templater that gets current comments
  * and the comment form. 
- * 
+ * @since 1.0.0
  * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/comments_template
  * @package TwoSides
  */
