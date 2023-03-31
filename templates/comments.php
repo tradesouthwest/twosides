@@ -41,11 +41,11 @@ if( post_password_required() ) { return; }
 			'avatar_size' => 34, 
             ), 
             $commentp
-        ); 
-	?> 
-	</ul> 
+        ); ?>
 
+	</ul> 
 	<ul class="comment-list comments-negative">  
+
 		<?php 
         $commentn = get_comments( array(
             'post_id'  => get_the_ID(),
@@ -59,28 +59,29 @@ if( post_password_required() ) { return; }
 			'avatar_size' => 34, 
             ), 
             $commentn
-        ); 
-	?> 
-	</ul> 
-    <?php
-        // Comments to navigate through?
-    if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
-    ?>
+        ); ?>
 
+	</ul> 
+
+        <?php // Comments to navigate through?
+        if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : 
+        ?>
         <nav class="navigation comment-navigation" role="navigation">
             <h1 class="screen-reader-text section-heading"><?php esc_html_e( 'Comment navigation', 'twosides' ); ?></h1>
             <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twosides' ) ); ?></div>
             <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twosides' ) ); ?></div>
         </nav>
-    <?php 
-    endif; // ends Check for comment navigation 
-    ?>
-    <?php 
-    if ( ! comments_open() && get_comments_number() ) : ?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.' , 'twosides' ); ?></p>
-    <?php 
-    endif; 
-    ?>
+
+        <?php 
+        endif; // ends Check for comment navigation 
+        ?>
+            <?php 
+            if ( ! comments_open() && get_comments_number() ) : ?>
+
+            <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'twosides' ); ?></p>
+            
+            <?php 
+            endif; ?>
 	
     <?php endif; ?> 
 
