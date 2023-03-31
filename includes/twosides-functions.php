@@ -1,4 +1,11 @@
 <?php 
+/**
+ * @since ver: 1.0.2
+ * Author: Tradesouthwest
+ * Author URI: http://tradesouthwest.com
+ * @package twosides
+ * @subpackage includes/twosides-functions
+ */
 // If this file is called directly, abort.
 defined( 'ABSPATH' ) or die( 'X' );
 
