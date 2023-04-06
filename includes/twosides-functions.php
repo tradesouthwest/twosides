@@ -126,11 +126,14 @@ function twosides_background_colors_cb()
     /* 
      * Defaults and values from options 
      */
+    //twosides_submits 
+    $twosides_submits  = $options['twosides_submits'];
+    if( $twosides_submits == '' ) $twosides_submits = esc_attr("#ffffff");
     // "#aafaca";
-    $twosides_color_1 = $options['twosides_posibkgd'];
+    $twosides_color_1  = $options['twosides_posibkgd'];
     if( $twosides_color_1 == '' ) $twosides_color_1    = esc_attr("transparent");
     // "#faaa99";
-    $twosides_color_2 = $options['twosides_negabkgd'];
+    $twosides_color_2  = $options['twosides_negabkgd'];
     if( $twosides_color_2  == '' ) $twosides_color_2   = esc_attr("transparent");  
     // border present by default
     $twosides_posibord = $options['twosides_posibord'];
@@ -138,13 +141,23 @@ function twosides_background_colors_cb()
     // border color
     $twosides_negabord = $options['twosides_negabord'];
     if( $twosides_negabord == '' ) $twosides_negabord  = esc_attr('#faaa99');  
-    
+    $twosides_maxwidth = (empty($options['twosides_maxwidth'])) 
+                       ? esc_attr('915') : $options['twosides_maxwidth'];
+    $twosides_padboth  = (empty($options['twosides_padboth'])) 
+                       ? esc_attr('0') : $options['twosides_padboth'];
+    $twosides_margleft = (empty($options['twosides_margleft'])) 
+                              ? esc_attr('0') : $options['twosides_margleft'];
     $htm = ''; 
     $htm .= 
-    '.prohead-count,.comment-list.comments-positive .comment,#actionPositive{
+    '.twosides_fieldset input[type="submit"]#actionPositive, .twosides_fieldset input[type="submit"]#actionNegative{
+    color: '. esc_attr($twosides_submits).';}
+    .prohead-count,.comment-list.comments-positive .comment,#actionPositive{
       background-color: '. esc_attr($twosides_color_1) .';border:1px solid '. esc_attr($twosides_posibord) .';margin-bottom: 1%;}
     .conhead-count,.comment-list.comments-negative .comment, #actionNegative{
-      background-color: '. esc_attr($twosides_color_2) .';border:1px solid '. esc_attr($twosides_negabord) .';margin-bottom: 1%;}';
+      background-color: '. esc_attr($twosides_color_2) .';border:1px solid '. esc_attr($twosides_negabord) .';margin-bottom: 1%;}
+    #comments.comments-area.twosides, .comments-above-list{margin: 0 auto;max-width:'. esc_attr($twosides_maxwidth) .'px;}
+    .comment-list.comments-positive,.comment-list.comments-negative{padding: '. absint($twosides_padboth).'px;}
+    #comments.comments-area.twosides .comment-list{margin-left:'. esc_attr($twosides_margleft) .'px;}';
                 
         wp_register_style( 'twosides-entry-set', false );
         wp_enqueue_style(   'twosides-entry-set' );

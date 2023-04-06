@@ -3,13 +3,13 @@
 Plugin Name: TwoSides
 Plugin URI: http://themes.tradesouthwest.com/wordpress/plugins/
 Description: Display comments in a side by side fashion and divide each side as positive or negative styled.
-Version:           1.0.2
+Version:           1.0.6
 Author:            Larry Judd
 Author URI:        https://tradesouthwest.com
-Stable tag:        1.0.2
+Stable tag:        trunk
 License:           GPLv3
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
-*/ /** @since file_version 20230331.102 */
+*/ /** @since file_version 202300404.102 */
 defined( 'ABSPATH' ) or die( 'X' );
 
 if( !defined('TWOSIDES_URL' ) ) { 
@@ -17,7 +17,7 @@ if( !defined('TWOSIDES_URL' ) ) {
 if( !defined('TWOSIDES_BASE_PATH' ) ) { 
      define( 'TWOSIDES_BASE_PATH', dirname(plugin_basename(__FILE__) ) ); }
 if( !defined('TWOSIDES_VER' ) ) { 
-     define( 'TWOSIDES_VER', '1.0.2' ); }
+     define( 'TWOSIDES_VER', '1.0.6' ); }
 
 /**
  * Get time of activating the plugin
@@ -60,11 +60,16 @@ if( function_exists( 'load_plugin_textdomain' ) )
 add_action( 'wp_enqueue_scripts', 'twosides_public_style' );
 function twosides_public_style() 
 {
-    wp_enqueue_style( 'twosides-css',  TWOSIDES_URL
-                     . 'library/twosides-css.css', array(), TWOSIDES_VER, false );
+    wp_enqueue_style( 'twosides-css',  TWOSIDES_URL . 'library/twosides-css.css', 
+                        array(), TWOSIDES_VER, false 
+                        );
     wp_enqueue_script( 'twosides-plugin', plugin_dir_url( __FILE__ ) . 
                        'library/twosides-plugin.js', 
-                       array( 'jquery' ), '', true ); 
+                        array( 'jquery' ), '', true 
+                        ); 
+    wp_register_script( 'ajax_comment', TWOSIDES_URL . 'library/twosides-ajax-comment.js', 
+                        array( 'jquery' ) 
+                        );
 }
 
 // check for comments theme support
@@ -75,7 +80,7 @@ if( !current_theme_supports( 'comments' ) )
 }   
    
 /**
- * Include required scripts.
+ * Include required admin scripts.
  */
 if( is_admin() ) : 
 function twosides_enqueue_admin_scripts()

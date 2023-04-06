@@ -184,6 +184,60 @@ function twosides_positxt_cb()
     <?php 
 }
 
+/** 
+ * padding of comments
+ * @since 1.0.4
+ */
+function twosides_padboth_cb()
+{
+    $options = get_option('twosides_admin'); 
+    $twosides_padboth = (empty($options['twosides_padboth'] )) 
+                       ? "0" : $options['twosides_padboth']; ?>
+    <p><label class="olmin" for="twosides_padboth"><?php esc_html_e( 
+'Set padding.', 'twosides' ); ?></label>
+    <input type="number" name="twosides_admin[twosides_padboth]" 
+           value="<?php echo esc_attr( $twosides_padboth ); ?>" 
+           size="15" min="0" max="60" class="smallinput"/> px</p>
+    <small><?php esc_html_e( 'Setting is in pixels. Controls all twosides comment boxes padding.',
+    'twosides' ); ?></small>
+    <?php 
+}
+/** 
+ * left margin of comments
+ * @since 1.0.4
+ */
+function twosides_margleft_cb()
+{
+    $options = get_option('twosides_admin'); 
+    $twosides_margleft = (empty($options['twosides_margleft'] )) 
+                       ? "0" : $options['twosides_margleft']; ?>
+    <p><label class="olmin" for="twosides_margleft"><?php esc_html_e( 
+'Set Margins Left.', 'twosides' ); ?></label>
+    <input type="number" name="twosides_admin[twosides_margleft]" 
+           value="<?php echo esc_attr( $twosides_margleft ); ?>" 
+           size="15" min="-90" max="90" class="smallinput"/> px</p>
+    <small><?php esc_html_e( 'Setting is in pixels. Controls all twosides comment boxes margin-left.',
+    'twosides' ); ?></small>
+    <?php 
+}
+/** 
+ * Width
+ * @since 1.0.1
+ */
+function twosides_maxwidth_cb()
+{
+    $options = get_option('twosides_admin'); 
+    $twosides_maxwidth = (empty($options['twosides_maxwidth'] )) 
+                ? "1170" : $options['twosides_maxwidth']; ?>
+    <p><label class="olmin" for="twosides_maxwidth"><?php esc_html_e( 
+'Set width.', 'twosides' ); ?></label>
+    <input type="number" name="twosides_admin[twosides_maxwidth]" 
+           value="<?php echo esc_attr( $twosides_maxwidth ); ?>" 
+           size="15" min="0" max="99999" class="smallinput"/> px</p>
+    <small><?php esc_html_e( 'Set the MAXIMUM width, in pixels, of the entire comments section.',
+    'twosides' ); ?></small>
+    <?php 
+} 
 /**
  * render information section
  * @since 1.0.2
@@ -192,7 +246,7 @@ function twosides_docs_cb()
 { 
 $pluguri = "https://themes.tradesouthwest.com/wordpress/plugins/";
 ?>
-<div class="twosides-support">
+<article class="twosides-support">
 
 <h4><?php esc_html_e( 'The Positive and Negative buttons for users to select which comment type they want to submit is already built into the single template file. 
 If you are using a special template file for single posts, you may want to use the shortcode listed below.', 'twosides' ); ?></h4>
@@ -203,6 +257,25 @@ If you are using a special template file for single posts, you may want to use t
 <dd></dd>
 <dd class="olds"><?php esc_html_e( 'Shortcode for the single posts pages are automatic and there is a shortcode but it is hardcoded as do_shortcode into the functions of the templating instance. Use this shortocode to add a form with buttons to your comments page.', 'twosides' ); ?><span> [twosides_form_shortcode]</span></dd>
 <dd></dd>
+</dl>
+
+
+<section class="twosides-support-faq">
+    <h4><?php esc_html_e( 'Frequently Asked Questions | Troubleshooting', 'twosides' ); ?></h4>
+    <details>
+    <summary><?php esc_html_e( 'Comment list columns are not sitting side-by-side', 'twosides'); ?></summary>
+    <?php esc_html_e( 'Try setting the margin-left to a lower number. This can be done using &#39;Left Margin Comments Boxes&#39; option or the theme Customizer. CSS Selector name is: ', 'twosides'); ?>
+    <pre>#comments.comments-area.twosides .comment-list{margin-left: -15px;}</pre>
+    </details>
+<!--    <details>
+    <summary><?php esc_html_e( 'Other', 'twosides'); ?></summary>
+    <?php esc_html_e( 'Other', 'twosides'); ?>
+    </details>
+-->
+</section>
+<hr>
+
+<dl>
 <dt><b><?php esc_html_e( 'For more options, try TwoSides Debate plugin by Tradesouthwest.', 'twosides' ); ?></b></dt> 
 <dd></dd>
 <dd><a class="button primary" href="<?php echo esc_url( $pluguri ); ?>" title="upgrade for twosides" target="_blank"><?php esc_html_e( 'TwoSides Debate', 'twosides' ); ?></a></dd>
@@ -219,6 +292,6 @@ If you are using a special template file for single posts, you may want to use t
 
 <dd></dd>
 </dl>
-</div>
+</article>
 <?php
 } 

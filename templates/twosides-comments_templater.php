@@ -10,14 +10,14 @@
  */
 
 add_filter( 'comments_template', 'twosides_comment_templater' );
+
 function twosides_comment_templater( $comment_template ) {
-  global $post;
-  
-  if ( !( is_singular() && ( have_comments() || 'open' == $post->comment_status ))){
-     return;
-  }
-  
-  $post_type_is = 'post';
+    global $post;
+    
+    if ( !(is_singular() && (have_comments() || 'open' == $post->comment_status ))){ 
+        return;
+    }    
+    $post_type_is = 'post';
 
     if( $post->post_type == sanitize_key($post_type_is) ){ 
       return dirname(__FILE__) . '/comments.php';

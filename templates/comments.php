@@ -19,6 +19,8 @@ if ( !comments_open() ) { return; }
  * return early without loading the comments. 
  * */ 
 if( post_password_required() ) { return; } 
+
+echo do_shortcode('[twosides_form_header]'); 
 ?> 
   
 <div id="comments" class="comments-area"> 
@@ -86,9 +88,9 @@ if( post_password_required() ) { return; }
     <?php 
     /* ******** ******** ******** ********
      * Starts slide-in form for commenting 
-     * ******* ******** ******** ******** */
+     * ******** ******** ******** ******** */
     ?>
-    
+    <div class="twosidesclearfix"></div> 
     <div id="twosidesMain">
 
         <?php 
@@ -103,4 +105,3 @@ if( post_password_required() ) { return; }
 
     </div>
 </div>
-<div class="clearfix clear"></div> 

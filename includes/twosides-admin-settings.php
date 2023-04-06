@@ -108,6 +108,27 @@ function twosides_register_admin_options()
         'twosides_admin',
         'twosides_admin_section'
     );
+    add_settings_field(
+        'twosides_maxwidth',
+        __( 'Width of comment area', 'twosides' ),
+        'twosides_maxwidth_cb',
+        'twosides_admin',
+        'twosides_admin_section'
+    );
+    add_settings_field(
+        'twosides_padboth',
+        __( 'Padding in Comments Boxes', 'twosides' ),
+        'twosides_padboth_cb',
+        'twosides_admin',
+        'twosides_admin_section'
+    ); 
+    add_settings_field(
+        'twosides_margleft',
+        __( 'Left Margin Comments Boxes', 'twosides' ),
+        'twosides_margleft_cb',
+        'twosides_admin',
+        'twosides_admin_section'
+    ); 
     
     
 /**

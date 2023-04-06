@@ -1,3 +1,9 @@
+/* twosides css ver 1.0.4 */
+.twosidesclearfix:after{
+    display: block;
+    content: "";
+    clear: both;
+}
 .twosides_fieldset .twosides-left {
     float: left; 
     display: block;
@@ -13,18 +19,28 @@
 ol.commentlist{
     list-style: none;
 }
+.procount,
+.concount{
+    position: relative;
+    bottom: -1.4em;
+    left: 1em;
+}
 .prohead-count,
 .conhead-count{
-    display:block;
-    height:1.222em;
-    margin-left: .5em;
+    display: block;
+    height: 1.222em;
+    margin-left: 0;
     max-width: 36em;
 }
-legend p.twosides-conhead,
-legend p.twosides-prohead{
+legend figure.twosides-conhead,
+legend figure.twosides-prohead{
     width: 100%;
     position:relative;
-    top: 15px;
+    margin: 0;
+}
+.comments-above-list fieldset legend{
+    margin: 0;
+    padding: 0;
 }
 .comments-area .reply a {
     display:none;
@@ -87,7 +103,7 @@ animation: slidein 1s;
     padding: 30px 0px;
     max-width: 910px;
     display: table;
-    background: #ddd; /* 4 testing */
+
 }
 .comment-list p{
     color: #000;
@@ -97,16 +113,18 @@ animation: slidein 1s;
 }
 /* list wrap (ul or ol or div) */
 .comment-list.comments-positive{
-    width: 50%;
+    width: 48%;
     float: left;
     height: 100%;
+    margin: 0;
 }
 
 .comment-list.comments-negative {
-    width: 50%;
+    width: 48%;
     float: right;
     display:block;
     height: 100%;
+    margin: 0;
 }
 
 
@@ -152,6 +170,6 @@ left: auto;
 }
 .twosides_fieldset input[type="submit"]#actionPositive,
 .twosides_fieldset input[type="submit"]#actionNegative {
-    font-size:initial;
-    font-weight:initial;
+    font-size:inherit;
+    font-weight:inherit;
 }
